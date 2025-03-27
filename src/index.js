@@ -1,5 +1,6 @@
 const { Client, IntentsBitField} = require('discord.js');
-
+const dotenv = require('dotenv');
+dotenv.config();
 const client = new Client({
     intents: [
         IntentsBitField.Flags.Guilds,
@@ -10,7 +11,7 @@ const client = new Client({
 });
 
 
-client.login('');
+client.login(process.env.TOKEN_DISCORD);
 client.on('ready', (c) => {
     console.log(`Logged in as ${c.user.tag}!`);
 });
