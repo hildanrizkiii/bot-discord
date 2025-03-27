@@ -1,6 +1,11 @@
 const { Client, IntentsBitField ,ActivityType} = require('discord.js');
 require('dotenv').config();
 const registerCommands = require('./register-commands');
+const fetch = require('node-fetch');
+const dataBmkg = 'https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json';
+const urlBmkg = 'https://data.bmkg.go.id/DataMKG/TEWS/';
+
+
 
 
 const client = new Client({
@@ -31,6 +36,34 @@ client.on('interactionCreate', (interaction) => {
     if(interaction.isChatInputCommand()) {
         if(interaction.commandName === 'sahur') {
             interaction.reply('tung tung tung sahur');
+        }
+    }
+    if(interaction.isChatInputCommand()) {
+        if(interaction.commandName === 'gempa') {
+            fetch(dataBmkg)
+            .then(res => res.json())
+            .then(dagem => { console.log(dagem);
+                const embed = {
+                    color: 0x0099ff,
+                    image: {
+                        url: urlBmkg + dagem.Infogempa.gempa.Shakemap,
+                    },
+                    title: 'Gempa Terkini',
+                    description: `
+                    Tanggal: ${dagem.Infogempa.gempa.Tanggal}
+                    Lokasi: ${dagem.Infogempa.gempa.Wilayah}
+                    Magnitudo: ${dagem.Infogempa.gempa.Magnitude}
+                    `,
+                    timestamp: new Date(),
+                    author: {
+                        name: 'BMKG',
+                    },
+                    footer: {
+                        text: 'Hildan BOT 2025',
+                    }
+                }
+                interaction.reply({ embeds: [embed] });
+            })
         }
     }
 })

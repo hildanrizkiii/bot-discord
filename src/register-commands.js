@@ -1,6 +1,7 @@
 const {REST, Routes} = require('discord.js');
 require('dotenv').config();
 
+
 const commands = [
     {
         name: 'ping',
@@ -13,6 +14,10 @@ const commands = [
     {
         name: 'sahur',
         description: 'tung tung tung sahur',
+    },
+    {
+        name: 'gempa',
+        description: 'gempa terkini',
     }
 ];
 
