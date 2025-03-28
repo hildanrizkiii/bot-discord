@@ -24,11 +24,6 @@ client.on('messageCreate', (message) => {
 })
 client.on('interactionCreate', (interaction) => {
     if(interaction.isChatInputCommand()) {
-        if(interaction.commandName === 'ping') {
-            interaction.reply('pong');
-        }
-    }
-    if(interaction.isChatInputCommand()) {
         if(interaction.commandName === 'bio') {
             interaction.reply('BIO KONTOLLLLLLL');
         }

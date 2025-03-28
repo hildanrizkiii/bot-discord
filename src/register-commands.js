@@ -4,10 +4,6 @@ require('dotenv').config();
 
 const commands = [
     {
-        name: 'ping',
-        description: 'Replies with Pong!',
-    },
-    {
         name:'bio',
         description: 'Replies with your konto',
     },
