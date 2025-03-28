@@ -30,7 +30,31 @@ client.on('interactionCreate', (interaction) => {
     }
     if(interaction.isChatInputCommand()) {
         if(interaction.commandName === 'sahur') {
-            interaction.reply('tung tung tung sahur');
+            interaction.reply(
+
+                {
+                    content: 'Sahur',
+                    embeds: [
+                        {
+                            color: 0x0099ff,
+                            title: 'tung tung tung sahur ',
+                            description: 'Anomali ini muncul di saat ramadhan tiba',
+                            image: {
+                                url: 'https://i.ibb.co.com/mFBvx0QX/sahur.jpg',
+                            },
+                            timestamp: new Date(),
+                            author: {
+                                name: 'Hildan',
+                            },
+                            footer: {
+                                text: 'Hildan BOT 2025',
+                            }
+                        }
+                    ]
+                }
+                
+            );
+
         }
     }
     if(interaction.isChatInputCommand()) {
