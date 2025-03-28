@@ -14,6 +14,10 @@ const commands = [
     {
         name: 'gempa',
         description: 'gempa terkini',
+    },
+    {
+        name: 'help',
+        description: 'help commands',
     }
 ];
 

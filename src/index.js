@@ -61,6 +61,11 @@ client.on('interactionCreate', (interaction) => {
             })
         }
     }
+    if(interaction.isChatInputCommand()) {
+        if(interaction.commandName === 'help') {
+            interaction.reply('help commands');
+        }
+    }
 })
 
 client.login(process.env.TOKEN_DISCORD);
