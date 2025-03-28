@@ -63,7 +63,30 @@ client.on('interactionCreate', (interaction) => {
     }
     if(interaction.isChatInputCommand()) {
         if(interaction.commandName === 'help') {
-            interaction.reply('help commands');
+            interaction.reply(
+                {
+                    content: 'List Commands',
+                    embeds: [
+                        {
+                            color: 0x0099ff,
+                            title: 'Commands',
+                            description: `
+                            /bio
+                            /sahur
+                            /gempa
+                            /help
+                            `,
+                            timestamp: new Date(),
+                            author: {
+                                name: 'Hildan',
+                            },
+                            footer: {
+                                text: 'Hildan BOT 2025',
+                            }
+                        }
+                    ]
+                }
+            );
         }
     }
 })
