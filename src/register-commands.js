@@ -18,6 +18,10 @@ const commands = [
     {
         name: 'help',
         description: 'help commands',
+    },
+    {
+        name: 'register',
+        description: 'register ucp username',
     }
 ];
 
