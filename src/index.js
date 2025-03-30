@@ -121,7 +121,6 @@ client.on('ready', (c) => {
 
     client.user.setActivity({
         name: 'Hildan',
-        type: ActivityType.Streaming,
-        url: 'https://www.youtube.com/live/9UV8UHN3l5U?si=t4tJVpNHBhjH9jPF'
+        type: ActivityType.Watching,
     });
 });
